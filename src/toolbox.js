@@ -15,26 +15,27 @@ listed here.
 import {MColors}  from './colors';
 
 export const toolbox = {
-  kind: 'categoryToolbox',
+  kind: 'flyoutToolbox',
   contents: [
     {
-      kind: 'category',
-      name: 'weezer',
-      colour: MColors.red,
-      contents: [
-        {
-          kind: 'block',
-          type: 'proxyThing',
-        },
-        {
-          kind: 'block',
-          type: 'set',
-        },
-        {
-          kind: 'block',
-          type: 'mod1',
-        },
-      ]
-    }
+      kind: 'block',
+      type: 'proxyThing',
+    },
+    {
+      kind: 'block',
+      type: 'set',
+    },
+    {
+      kind: 'block',
+      type: 'beat',
+    },
+    {
+      kind: 'block',
+      type: 'lengthEase',
+    },
+    {
+      kind: 'block',
+      type: 'mod1',
+    },
   ]
-};
+}

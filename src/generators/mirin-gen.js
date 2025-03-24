@@ -17,7 +17,7 @@ mirinGenerator.scrub_ = function(block, code, thisOnly) {
 
 mirinGenerator.forBlock['proxyThing'] = function(block, generator) {
 
-    const code = "if not P1 or not P2 then\n  backToSongWheel('Two Player Mode Required')\n  return\nend\n\n-- judgment / combo proxies\n\n for pn = 1, 2 do\n  setupJudgeProxy(PJ[pn], P[pn]:GetChild('Judgment'), pn)\n  setupJudgeProxy(PC[pn], P[pn]:GetChild('Combo'), pn)\nend\n\n-- player proxies\n\nfor pn = 1, #PP do\n  PP[pn]:SetTarget(P[pn])\n  P[pn]:hidden(1)\nend\n";
+    const code = "if not P1 or not P2 then\n  backToSongWheel('Two Player Mode Required')\n  return\nend\n\n-- judgment / combo proxies\n\n for pn = 1, 2 do\n  setupJudgeProxy(PJ[pn], P[pn]:GetChild('Judgment'), pn)\n  setupJudgeProxy(PC[pn], P[pn]:GetChild('Combo'), pn)\nend\n\n-- player proxies\n\nfor pn = 1, #PP do\n  PP[pn]:SetTarget(P[pn])\n  P[pn]:hidden(1)\nend\n\n--your code below\n";
     return code;
 };
 
@@ -41,5 +41,22 @@ mirinGenerator.forBlock['mod1'] = function(block, generator) {
   }
 
   const code = number_amp + ", '" + text_mod + "'" + comma + value_next;
+  return [code, Order.ATOMIC];
+};
+
+mirinGenerator.forBlock['beat'] = function(block, generator) {
+  const number_beat = block.getFieldValue('beat');
+  const value_next = generator.valueToCode(block, 'next', Order.ATOMIC);
+
+  const code = number_beat + ', ' + value_next; 
+  return [code, Order.ATOMIC];
+};
+
+mirinGenerator.forBlock['lengthEase'] = function(block, generator) {
+  const number_length = block.getFieldValue('length');
+  const text_ease = block.getFieldValue('ease');
+  const value_next = generator.valueToCode(block, 'next', Order.ATOMIC);
+
+  const code = number_length + ', ' + text_ease + ', ' + value_next;
   return [code, Order.ATOMIC];
 }

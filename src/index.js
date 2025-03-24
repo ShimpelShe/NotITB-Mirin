@@ -6,11 +6,21 @@
 
 import * as Blockly from 'blockly';
 import {blocks} from './blocks/mirin-blocks';
-import {forBlock} from './generators/mirin-gen';
 import {mirinGenerator} from './generators/mirin-gen';
 import {save, load} from './serialization';
 import {toolbox} from './toolbox';
 import './index.css';
+import './renderers/custom';
+
+// Import plugins
+
+import {Backpack} from '@blockly/workspace-backpack';
+import {ZoomToFitControl} from '@blockly/zoom-to-fit';
+import {
+  ScrollOptions,
+  ScrollBlockDragger,
+  ScrollMetricsManager,
+} from '@blockly/plugin-scroll-options';
 
 // Register the blocks and generator with Blockly
 Blockly.common.defineBlocks(blocks);
@@ -18,7 +28,60 @@ Blockly.common.defineBlocks(blocks);
 // Set up UI elements and inject Blockly
 const codeDiv = document.getElementById('generatedCode').firstChild;
 const blocklyDiv = document.getElementById('blocklyDiv');
-const ws = Blockly.inject(blocklyDiv, {toolbox});
+const ws = Blockly.inject(blocklyDiv, {toolbox,
+  grid:
+         {spacing: 20,
+          length: 3,
+          colour: '#ccc',
+          snap: true},
+     trashcan: true,
+     move:{
+      scrollbars: {
+        horizontal: true,
+        vertical: true
+      },
+      drag: true,
+      wheel: false},
+      zoom:
+         {controls: true,
+          wheel: true,
+          startScale: 1.0,
+          maxScale: 3,
+          minScale: 0.3,
+          scaleSpeed: 1.2,
+          pinch: true},
+      horizontalLayout: true,
+      collapse: true,
+      comments: true,
+      renderer: 'custom_renderer',
+      plugins: {
+        blockDragger: ScrollBlockDragger,
+        metricsManager: ScrollMetricsManager,
+      },
+});
+
+// Initialize & Configure Plugins
+
+const backoptions = {
+  allowEmptyBackpackOpen: false,
+  useFilledBackpackImage: true,
+  contextMenu: {
+    emptyBackpack: true,
+    removeFromBackpack: true,
+    copyToBackpack: true,
+    copyAllToBackpack: true,
+    pasteAllToBackpack: true
+  }
+}
+
+const backpack = new Backpack(ws, backoptions);
+backpack.init();
+
+const zoomToFit = new ZoomToFitControl(ws);
+zoomToFit.init();
+
+const plugin = new ScrollOptions(ws);
+plugin.init();
 
 // This function resets the code and output divs, shows the
 // generated code from the workspace, and evals the code.
