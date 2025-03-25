@@ -3,9 +3,10 @@ export const MColors = {
     orange: '#f82',
     yellow: '#fc2',
     green: '#2c4',
-    blue: '#26f',
+    blue: '#47f',
+    cyan: '#5af',
     purple: '#a2f',
-    pink: '#f06',
+    pink: '#f5d',
     black: '000',
     gray: '#888',
     white: 'fff'
