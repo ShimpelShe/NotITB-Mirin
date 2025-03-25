@@ -10,7 +10,7 @@ import {mirinGenerator} from './generators/mirin-gen';
 import {save, load} from './serialization';
 import {toolbox} from './toolbox';
 import './index.css';
-import './renderers/custom';
+import './renderers/NotITB';
 
 // Import plugins
 
@@ -50,10 +50,9 @@ const ws = Blockly.inject(blocklyDiv, {toolbox,
           minScale: 0.3,
           scaleSpeed: 1.2,
           pinch: true},
-      horizontalLayout: true,
       collapse: true,
       comments: true,
-      renderer: 'custom_renderer',
+      renderer: 'NotITB',
       plugins: {
         blockDragger: ScrollBlockDragger,
         metricsManager: ScrollMetricsManager,

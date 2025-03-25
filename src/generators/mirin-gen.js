@@ -29,7 +29,7 @@ mirinGenerator.forBlock['set'] = function(block, generator) {
     return code;
 };
 
-mirinGenerator.forBlock['mod1'] = function(block, generator) {
+mirinGenerator.forBlock['amp&mod'] = function(block, generator) {
   const number_amp = block.getFieldValue('amp');
   const text_mod = block.getFieldValue('mod');
   const value_next = generator.valueToCode(block, 'next', Order.ATOMIC);
@@ -59,4 +59,41 @@ mirinGenerator.forBlock['lengthEase'] = function(block, generator) {
 
   const code = number_length + ', ' + text_ease + ', ' + value_next;
   return [code, Order.ATOMIC];
+};
+
+mirinGenerator.forBlock['exclude'] = function(block, generator) {
+  const value_exclude = generator.valueToCode(block, 'exclude', Order.ATOMIC);
+
+  const code = 'exclude = {' + value_exclude + '}';
+  return [code, Order.ATOMIC];
+};
+
+mirinGenerator.forBlock['mod'] = function(block, generator) {
+  const text_mod = block.getFieldValue('mod');
+  const value_mod = generator.valueToCode(block, 'mod', Order.ATOMIC);
+
+  if (value_mod !== '') {
+    var next = ', ' + value_mod;
+  } else {
+    var next = '';
+  } 
+
+  const code = "'" + text_mod + "'" + next;
+  return [code, Order.ATOMIC];
+};
+
+mirinGenerator.forBlock['alias'] = function(block, generator) {
+  const text_name = block.getFieldValue('name');
+  const text_mod = block.getFieldValue('mod');
+
+  const code = "alias {'" + text_name + "', '" + text_mod + "'}";
+  return code;
+};
+
+mirinGenerator.forBlock['defineMod'] = function(block, generator) {
+  const text_name = block.getFieldValue('name');
+  const value_mods = generator.valueToCode(block, 'mods', Order.ATOMIC);
+
+  const code = "definemod {'" + text_name + "', " + value_mods + "}";
+  return code;
 }

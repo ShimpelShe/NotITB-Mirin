@@ -15,27 +15,97 @@ listed here.
 import {MColors}  from './colors';
 
 export const toolbox = {
-  kind: 'flyoutToolbox',
-  contents: [
-    {
-      kind: 'block',
-      type: 'proxyThing',
+    kind: 'categoryToolbox',
+    contents: [
+      {
+        kind: 'category',
+        name: 'Essentials',
+        colour: MColors.yellow,
+        contents: [
+        {
+          kind: 'block',
+          type: 'proxyThing',
+        },
+        {
+          kind: 'block',
+          type: 'set',
+          fields: {
+            type: 'set'
+          }
+        },
+        {
+          kind: 'block',
+          type: 'set',
+          fields: {
+            type: 'setdefault'
+          }
+        },
+        {
+          kind: 'block',
+          type: 'set',
+          fields: {
+            type: 'ease'
+          }
+        },
+        {
+          kind: 'block',
+          type: 'set',
+          fields: {
+            type: 'add'
+          }
+        },
+        {
+          kind: 'block',
+          type: 'set',
+          fields: {
+            type: 'reset'
+          }
+        }
+      ]
     },
     {
-      kind: 'block',
-      type: 'set',
-    },
-    {
-      kind: 'block',
-      type: 'beat',
-    },
-    {
-      kind: 'block',
-      type: 'lengthEase',
-    },
-    {
-      kind: 'block',
-      type: 'mod1',
-    },
+      kind: 'category',
+      name: 'Mod Stuff',
+      colour: MColors.blue,
+      contents: [
+        
+        {
+          kind: 'block',
+          type: 'beat',
+        },
+        {
+          kind: 'block',
+          type: 'lengthEase',
+        },
+        {
+          kind: 'block',
+          type: 'amp&mod',
+        },
+        {
+          kind: 'block',
+          type: 'mod',
+        },
+        {
+          kind: 'block',
+          type: 'exclude',
+        },
+        {
+          kind: 'block',
+          type: 'alias'
+        },
+        {
+          kind: 'block',
+          type: 'defineMod',
+          inputs: {
+            mods: {
+              shadow: {
+                kind: 'block',
+                type: 'amp&mod'
+              }
+            }
+          }
+        }
+      ]
+    }
   ]
 }

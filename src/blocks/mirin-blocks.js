@@ -39,6 +39,10 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
                 "add"
               ],
               [
+                "Reset",
+                "reset"
+              ],
+              [
                 "Set Default",
                 "setdefault"
               ]
@@ -54,7 +58,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
         "colour": MColors.yellow
       },
       {
-        "type": "mod1",
+        "type": "amp&mod",
         "tooltip": "",
         "helpUrl": "https://xerool.github.io/mirin-template/docs/mods.html",
         "message0": "Amp %1 Mod %2 %3",
@@ -119,5 +123,83 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
         ],
         "output": null,
         "colour": MColors.blue
+      },
+      {
+        "type": "exclude",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "Exclude: %1",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "exclude"
+          }
+        ],
+        "output": null,
+        "colour": MColors.red
+      },
+      {
+        "type": "mod",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "Mod %1 %2",
+        "args0": [
+          {
+            "type": "field_input",
+            "name": "mod",
+            "text": "Drunk"
+          },
+          {
+            "type": "input_value",
+            "name": "mod"
+          }
+        ],
+        "output": null,
+        "colour": MColors.blue
+      },
+      {
+        "type": "alias",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "Alias %1 Mod %2 %3",
+        "args0": [
+          {
+            "type": "field_input",
+            "name": "name",
+            "text": "BoozeMode"
+          },
+          {
+            "type": "field_input",
+            "name": "mod",
+            "text": "Drunk"
+          },
+          {
+            "type": "input_end_row",
+            "name": "alias"
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": MColors.purple
+      },
+      {
+        "type": "defineMod",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "Name %1 Mods %2",
+        "args0": [
+          {
+            "type": "field_input",
+            "name": "name",
+            "text": "Drunkenly"
+          },
+          {
+            "type": "input_value",
+            "name": "mods"
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": MColors.purple
       }
     ]);
