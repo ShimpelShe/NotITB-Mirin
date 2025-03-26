@@ -1,7 +1,7 @@
 {
-  "name": "blk",
+  "name": "NotITBM",
   "version": "1.0.0",
-  "description": "A sample app using Blockly",
+  "description": "Not in the blockly - Mirin Edition",
   "main": "index.js",
   "private": true,
   "scripts": {

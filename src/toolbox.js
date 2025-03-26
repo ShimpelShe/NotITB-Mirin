@@ -106,6 +106,26 @@ export const toolbox = {
           }
         }
       ]
+    },
+    {
+      kind: 'category',
+      name: 'Flow',
+      colour: MColors.orange,
+      contents:
+      [
+        {
+          kind: 'block',
+          type: 'if'
+        },
+        {
+          kind: 'block',
+          type: 'ifelse'
+        },
+        {
+          kind: 'block',
+          type: 'repeat'
+        }
+      ]
     }
   ]
 }

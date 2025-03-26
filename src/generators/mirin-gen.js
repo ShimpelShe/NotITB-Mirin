@@ -96,4 +96,32 @@ mirinGenerator.forBlock['defineMod'] = function(block, generator) {
 
   const code = "definemod {'" + text_name + "', " + value_mods + "}";
   return code;
+};
+
+mirinGenerator.forBlock['if'] = function(block, generator) {
+  const value_label0 = generator.valueToCode(block, 'label0', Order.ATOMIC);
+
+  const statement_blocks = generator.statementToCode(block, 'blocks');
+
+  const code = 'if (' + value_label0 + ') do {\n' + statement_blocks + '\n}';
+  return code;
+};
+
+mirinGenerator.forBlock['ifelse'] = function(block, generator) {
+  const value_label0 = generator.valueToCode(block, 'label0', Order.ATOMIC);
+
+  const statement_blocks = generator.statementToCode(block, 'if');
+  const statement_elseblocks = generator.statementToCode(block, 'else');
+
+  const code = 'if (' + value_label0 + ') do {\n' + statement_blocks + '\n} else {\n' + statement_elseblocks + '\n}';
+  return code;
+};
+
+mirinGenerator.forBlock['repeat'] = function(block, generator) {
+  const value_label0 = generator.valueToCode(block, 'label0', Order.ATOMIC);
+
+  const statement_repeat = generator.statementToCode(block, 'repeat');
+
+  const code = 'for (let i = 0; i < ' + value_label0 + '; i++) {\n' + statement_repeat + '\n}';
+  return code;
 }

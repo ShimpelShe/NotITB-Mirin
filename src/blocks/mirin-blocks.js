@@ -201,5 +201,86 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
         "previousStatement": null,
         "nextStatement": null,
         "colour": MColors.purple
+      },
+      {
+        "type": "if",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "If %1 Then %2 %3",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "label0",
+            "align": "RIGHT"
+          },
+          {
+            "type": "input_dummy",
+            "name": "label1"
+          },
+          {
+            "type": "input_statement",
+            "name": "blocks",
+            "align": "CENTRE"
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": MColors.orange
+      },
+      {
+        "type": "ifelse",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "If %1 Then %2 %3 Else %4 %5",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "label0",
+            "align": "RIGHT"
+          },
+          {
+            "type": "input_dummy",
+            "name": "label1"
+          },
+          {
+            "type": "input_statement",
+            "name": "if"
+          },
+          {
+            "type": "input_end_row",
+            "name": "label2"
+          },
+          {
+            "type": "input_statement",
+            "name": "else"
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": MColors.orange
+      },
+      {
+        "type": "repeat",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "Repeat %1 Times %2 %3",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "label0",
+            "align": "RIGHT"
+          },
+          {
+            "type": "input_dummy",
+            "name": "label1"
+          },
+          {
+            "type": "input_statement",
+            "name": "repeat"
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": MColors.orange
       }
     ]);
