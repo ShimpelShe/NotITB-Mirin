@@ -1,6 +1,6 @@
 export const MColors = {
     red: '#c45',
-    orange: '#f82',
+    orange: '#f93',
     yellow: '#fc2',
     green: '#2c4',
     blue: '#47f',

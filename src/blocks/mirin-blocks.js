@@ -263,24 +263,30 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
         "type": "repeat",
         "tooltip": "",
         "helpUrl": "",
-        "message0": "Repeat %1 Times %2 %3",
+        "message0": "Repeat %1 .. %2 Stepsize %3 %4",
         "args0": [
           {
             "type": "input_value",
-            "name": "label0",
+            "name": "start",
             "align": "RIGHT"
           },
           {
-            "type": "input_dummy",
-            "name": "label1"
+            "type": "input_value",
+            "name": "end"
+          },
+          {
+            "type": "input_value",
+            "name": "step",
+            "align": "RIGHT"
           },
           {
             "type": "input_statement",
-            "name": "repeat"
+            "name": "blocks"
           }
         ],
         "previousStatement": null,
         "nextStatement": null,
-        "colour": MColors.orange
+        "colour": MColors.orange,
+        "inputsInline": true
       }
     ]);

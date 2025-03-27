@@ -118,10 +118,14 @@ mirinGenerator.forBlock['ifelse'] = function(block, generator) {
 };
 
 mirinGenerator.forBlock['repeat'] = function(block, generator) {
-  const value_label0 = generator.valueToCode(block, 'label0', Order.ATOMIC);
+  const value_start = generator.valueToCode(block, 'start', Order.ATOMIC);
 
-  const statement_repeat = generator.statementToCode(block, 'repeat');
+  const value_end = generator.valueToCode(block, 'end', Order.ATOMIC);
 
-  const code = 'for (let i = 0; i < ' + value_label0 + '; i++) {\n' + statement_repeat + '\n}';
+  const value_step = generator.valueToCode(block, 'step', Order.ATOMIC);
+
+  const statement_blocks = generator.statementToCode(block, 'blocks');
+
+  const code = 'for i = ' + value_start + ', ' + value_end + ', ' + value_step + ' do\n' + statement_blocks + '\nend';
   return code;
 }
