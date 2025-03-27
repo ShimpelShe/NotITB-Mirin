@@ -124,7 +124,42 @@ export const toolbox = {
         {
           kind: 'block',
           type: 'repeat'
+        },
+        {
+          kind: 'block',
+          type: 'operators'
+        },
+        {
+          kind: 'block',
+          type: 'equality'
+        },
+        {
+          kind: 'block',
+          type: 'andor'
+        },
+        {
+          kind: 'block',
+          type: 'not'
         }
+      ]
+    },
+    {
+      kind: 'category',
+      name: 'Arguments',
+      colour: MColors.green,
+      contents: [
+        {
+          kind: 'block',
+          type: 'text'
+        },
+        {
+          kind: 'block',
+          type: 'number'
+        },
+        {
+          kind: 'block',
+          type: 'join'
+        },
       ]
     }
   ]

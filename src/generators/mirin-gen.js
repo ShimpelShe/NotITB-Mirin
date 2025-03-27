@@ -128,4 +128,60 @@ mirinGenerator.forBlock['repeat'] = function(block, generator) {
 
   const code = 'for i = ' + value_start + ', ' + value_end + ', ' + value_step + ' do\n' + statement_blocks + '\nend';
   return code;
-}
+};
+
+mirinGenerator.forBlock['operators'] = function(block, generator) {
+  const value_input0 = generator.valueToCode(block, 'input0', Order.ATOMIC);
+  const dropdown_name = block.getFieldValue('NAME');
+  const value_input1 = generator.valueToCode(block, 'input1', Order.ATOMIC);
+
+  const code = value_input0 + ' ' + dropdown_name + ' ' + value_input1;
+  return [code, Order.ATOMIC];
+};
+
+mirinGenerator.forBlock['equality'] = function(block, generator) {
+  const value_input0 = generator.valueToCode(block, 'input0', Order.ATOMIC);
+  const dropdown_sign = block.getFieldValue('sign');
+  const value_input1 = generator.valueToCode(block, 'input1', Order.ATOMIC);
+
+  const code = value_input0 + ' ' + dropdown_sign + ' ' + value_input1;
+  return [code, Order.ATOMIC];
+};
+
+mirinGenerator.forBlock['andor'] = function(block, generator) {
+  const value_input0 = generator.valueToCode(block, 'input0', Order.ATOMIC);
+  const dropdown_type = block.getFieldValue('type');
+  const value_input1 = generator.valueToCode(block, 'input1', Order.ATOMIC);
+
+  const code = value_input0 + ' ' + dropdown_type + ' ' + value_input1;
+  return [code, Order.ATOMIC];
+};
+
+mirinGenerator.forBlock['not'] = function(block, generator) {
+  const value_input0 = generator.valueToCode(block, 'input0', Order.ATOMIC);
+
+  const code = 'not ' + value_input0;
+  return [code, Order.ATOMIC];
+};
+
+mirinGenerator.forBlock['join'] = function(block, generator) {
+  const value_input0 = generator.valueToCode(block, 'input0', Order.ATOMIC);
+  const value_input1 = generator.valueToCode(block, 'input1', Order.ATOMIC);
+
+  const code = value_input0 + value_input1;
+  return [code, Order.ATOMIC];
+};
+
+mirinGenerator.forBlock['text'] = function(block, generator) {
+  const text_text = block.getFieldValue('text');
+
+  const code = "'" + text_text + "'";
+  return [code, Order.ATOMIC];
+};
+
+mirinGenerator.forBlock['number'] = function(block, generator) {
+  const number_num = block.getFieldValue('num');
+
+  const code = '' + number_num;
+  return [code, Order.ATOMIC];
+};

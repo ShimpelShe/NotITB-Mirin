@@ -288,5 +288,201 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
         "nextStatement": null,
         "colour": MColors.orange,
         "inputsInline": true
+      },
+      {
+        "type": "operators",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "%1 %2 %3",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "input0"
+          },
+          {
+            "type": "field_dropdown",
+            "name": "NAME",
+            "options": [
+              [
+                "+",
+                "+"
+              ],
+              [
+                "-",
+                "-"
+              ],
+              [
+                "*",
+                "*"
+              ],
+              [
+                "/",
+                "/"
+              ]
+            ]
+          },
+          {
+            "type": "input_value",
+            "name": "input1"
+          }
+        ],
+        "output": null,
+        "colour":MColors.orange,
+        "inputsInline": true
+      },
+      {
+        "type": "equality",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "%1 %2 %3",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "input0"
+          },
+          {
+            "type": "field_dropdown",
+            "name": "sign",
+            "options": [
+              [
+                "=",
+                "=="
+              ],
+              [
+                "~=",
+                "~="
+              ],
+              [
+                ">=",
+                ">="
+              ],
+              [
+                "<=",
+                "<="
+              ],
+              [
+                ">",
+                ">"
+              ],
+              [
+                "<",
+                "<"
+              ]
+            ]
+          },
+          {
+            "type": "input_value",
+            "name": "input1"
+          }
+        ],
+        "output": null,
+        "colour": MColors.orange,
+        "inputsInline": true
+      },
+      {
+        "type": "andor",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "%1 %2 %3",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "input0"
+          },
+          {
+            "type": "field_dropdown",
+            "name": "type",
+            "options": [
+              [
+                "And",
+                "and"
+              ],
+              [
+                "Or",
+                "or"
+              ]
+            ]
+          },
+          {
+            "type": "input_value",
+            "name": "input1"
+          }
+        ],
+        "output": null,
+        "colour": MColors.orange,
+        "inputsInline": true
+      },
+      {
+        "type": "not",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "Not %1",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "input0"
+          }
+        ],
+        "output": null,
+        "colour": MColors.orange,
+        "inputsInline": true
+      },
+      {
+        "type": "join",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "Join %1 & %2",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "input0"
+          },
+          {
+            "type": "input_value",
+            "name": "input1"
+          }
+        ],
+        "output": null,
+        "colour": MColors.green,
+        "inputsInline": true
+      },
+      {
+        "type": "text",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "“ %1 ” %2",
+        "args0": [
+          {
+            "type": "field_input",
+            "name": "text",
+            "text": "Text"
+          },
+          {
+            "type": "input_end_row",
+            "name": "input0"
+          }
+        ],
+        "output": null,
+        "colour": MColors.green,
+        "inputsInline": true
+      },
+      {
+        "type": "number",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "%1 %2",
+        "args0": [
+          {
+            "type": "field_number",
+            "name": "num",
+            "value": 0
+          },
+          {
+            "type": "input_end_row",
+            "name": "input0"
+          }
+        ],
+        "output": null,
+        "colour": MColors.green
       }
     ]);
