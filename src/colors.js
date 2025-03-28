@@ -4,7 +4,7 @@ export const MColors = {
     yellow: '#fc2',
     green: '#3b5',
     blue: '#47f',
-    cyan: '#5af',
+    cyan: '#3cd',
     purple: '#a2f',
     pink: '#f5d',
     black: '000',

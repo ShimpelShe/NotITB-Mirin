@@ -185,3 +185,29 @@ mirinGenerator.forBlock['number'] = function(block, generator) {
   const code = '' + number_num;
   return [code, Order.ATOMIC];
 };
+
+mirinGenerator.forBlock['bool'] = function(block, generator) {
+  const dropdown_bool = block.getFieldValue('bool');
+
+  const code = '' + dropdown_bool;
+  return [code, Order.ATOMIC];
+};
+
+mirinGenerator.forBlock['while'] = function(block, generator) {
+  const value_input0 = generator.valueToCode(block, 'input0', Order.ATOMIC);
+
+  const statement_input1 = generator.statementToCode(block, 'input1');
+
+  const code = 'while (' + value_input0 + ') do\n' + statement_input1 + '\nend';
+  return code;
+};
+mirinGenerator.forBlock['func'] = function(block, generator) {
+  const text_name = block.getFieldValue('name');
+
+  const value_input1 = generator.valueToCode(block, 'input1', Order.ATOMIC);
+
+  const statement_input2 = generator.statementToCode(block, 'input2');
+
+  const code = 'func {' + value_input1 + ', function(' + text_name + ')\n' + statement_input2 + '\nend}';
+  return code;
+}

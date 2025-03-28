@@ -19,7 +19,7 @@ export const toolbox = {
     contents: [
       {
         kind: 'category',
-        name: 'Essentials',
+        name: 'Flow',
         colour: MColors.yellow,
         contents: [
         {
@@ -60,6 +60,38 @@ export const toolbox = {
           fields: {
             type: 'reset'
           }
+        },
+        {
+          kind: 'block',
+          type: 'if'
+        },
+        {
+          kind: 'block',
+          type: 'ifelse'
+        },
+        {
+          kind: 'block',
+          type: 'while'
+        },
+        {
+          kind: 'block',
+          type: 'repeat'
+        },
+        {
+          kind: 'block',
+          type: 'func'
+        },
+        {
+          kind: 'block',
+          type: 'equality'
+        },
+        {
+          kind: 'block',
+          type: 'andor'
+        },
+        {
+          kind: 'block',
+          type: 'not'
         }
       ]
     },
@@ -109,21 +141,12 @@ export const toolbox = {
     },
     {
       kind: 'category',
-      name: 'Flow',
+      name: 'Arguments',
       colour: MColors.orange,
-      contents:
-      [
+      contents: [
         {
           kind: 'block',
-          type: 'if'
-        },
-        {
-          kind: 'block',
-          type: 'ifelse'
-        },
-        {
-          kind: 'block',
-          type: 'repeat'
+          type: 'join'
         },
         {
           kind: 'block',
@@ -131,34 +154,15 @@ export const toolbox = {
         },
         {
           kind: 'block',
-          type: 'equality'
-        },
-        {
-          kind: 'block',
-          type: 'andor'
-        },
-        {
-          kind: 'block',
-          type: 'not'
-        }
-      ]
-    },
-    {
-      kind: 'category',
-      name: 'Arguments',
-      colour: MColors.green,
-      contents: [
-        {
-          kind: 'block',
           type: 'text'
         },
         {
           kind: 'block',
-          type: 'number'
+          type: 'bool'
         },
         {
           kind: 'block',
-          type: 'join'
+          type: 'number'
         },
       ]
     }

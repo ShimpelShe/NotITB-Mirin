@@ -225,7 +225,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
         ],
         "previousStatement": null,
         "nextStatement": null,
-        "colour": MColors.orange
+        "colour": MColors.yellow
       },
       {
         "type": "ifelse",
@@ -257,7 +257,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
         ],
         "previousStatement": null,
         "nextStatement": null,
-        "colour": MColors.orange
+        "colour": MColors.yellow
       },
       {
         "type": "repeat",
@@ -286,48 +286,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
         ],
         "previousStatement": null,
         "nextStatement": null,
-        "colour": MColors.orange,
-        "inputsInline": true
-      },
-      {
-        "type": "operators",
-        "tooltip": "",
-        "helpUrl": "",
-        "message0": "%1 %2 %3",
-        "args0": [
-          {
-            "type": "input_value",
-            "name": "input0"
-          },
-          {
-            "type": "field_dropdown",
-            "name": "NAME",
-            "options": [
-              [
-                "+",
-                "+"
-              ],
-              [
-                "-",
-                "-"
-              ],
-              [
-                "*",
-                "*"
-              ],
-              [
-                "/",
-                "/"
-              ]
-            ]
-          },
-          {
-            "type": "input_value",
-            "name": "input1"
-          }
-        ],
-        "output": null,
-        "colour":MColors.orange,
+        "colour": MColors.yellow,
         "inputsInline": true
       },
       {
@@ -376,7 +335,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
           }
         ],
         "output": null,
-        "colour": MColors.orange,
+        "colour": MColors.yellow,
         "inputsInline": true
       },
       {
@@ -409,7 +368,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
           }
         ],
         "output": null,
-        "colour": MColors.orange,
+        "colour": MColors.yellow,
         "inputsInline": true
       },
       {
@@ -424,7 +383,48 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
           }
         ],
         "output": null,
-        "colour": MColors.orange,
+        "colour": MColors.yellow,
+        "inputsInline": true
+      },
+      {
+        "type": "operators",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "%1 %2 %3",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "input0"
+          },
+          {
+            "type": "field_dropdown",
+            "name": "NAME",
+            "options": [
+              [
+                "+",
+                "+"
+              ],
+              [
+                "-",
+                "-"
+              ],
+              [
+                "*",
+                "*"
+              ],
+              [
+                "/",
+                "/"
+              ]
+            ]
+          },
+          {
+            "type": "input_value",
+            "name": "input1"
+          }
+        ],
+        "output": null,
+        "colour":MColors.orange,
         "inputsInline": true
       },
       {
@@ -443,7 +443,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
           }
         ],
         "output": null,
-        "colour": MColors.green,
+        "colour": MColors.orange,
         "inputsInline": true
       },
       {
@@ -463,7 +463,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
           }
         ],
         "output": null,
-        "colour": MColors.green,
+        "colour": MColors.orange,
         "inputsInline": true
       },
       {
@@ -483,6 +483,86 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
           }
         ],
         "output": null,
-        "colour": MColors.green
+        "colour": MColors.orange
+      },
+      {
+        "type": "bool",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "%1 %2",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "bool",
+            "options": [
+              [
+                "True",
+                "true"
+              ],
+              [
+                "False",
+                "false"
+              ]
+            ]
+          },
+          {
+            "type": "input_end_row",
+            "name": "input0"
+          }
+        ],
+        "output": null,
+        "colour": MColors.orange
+      },
+      {
+        "type": "while",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "While %1 do %2 %3",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "input0"
+          },
+          {
+            "type": "input_end_row",
+            "name": "label0"
+          },
+          {
+            "type": "input_statement",
+            "name": "input1"
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": MColors.yellow
+      },
+      {
+        "type": "func",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "Function %1 %2 At beat %3 %4",
+        "args0": [
+          {
+            "type": "field_input",
+            "name": "name",
+            "text": "..."
+          },
+          {
+            "type": "input_dummy",
+            "name": "input0"
+          },
+          {
+            "type": "input_value",
+            "name": "input1"
+          },
+          {
+            "type": "input_statement",
+            "name": "input2"
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": MColors.yellow,
+        "inputsInline": true
       }
     ]);
