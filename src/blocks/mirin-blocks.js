@@ -564,5 +564,223 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
         "nextStatement": null,
         "colour": MColors.yellow,
         "inputsInline": true
+      },
+      {
+        "type": "spline",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "Set Spline %1 %2 Offset %3 %4 Point %5 Column %6 % %7 Speed %8 %9",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "Type",
+            "options": [
+              [
+                "X",
+                "X"
+              ],
+              [
+                "Y",
+                "Y"
+              ],
+              [
+                "Z",
+                "Z"
+              ],
+              [
+                "Rotation X",
+                "RotationX"
+              ],
+              [
+                "Rotation Y",
+                "RotationY"
+              ],
+              [
+                "Rotation Z",
+                "RotationZ"
+              ],
+              [
+                "Size",
+                "Size"
+              ],
+              [
+                "Skew",
+                "Skew"
+              ],
+              [
+                "Stealth",
+                "Stealth"
+              ]
+            ]
+          },
+          {
+            "type": "field_dropdown",
+            "name": "Player",
+            "options": [
+              [
+                "Player 1",
+                "P1"
+              ],
+              [
+                "Player 2",
+                "P2"
+              ]
+            ]
+          },
+          {
+            "type": "field_number",
+            "name": "ONum",
+            "value": 100
+          },
+          {
+            "type": "input_end_row",
+            "name": "input0",
+            "align": "CENTRE"
+          },
+          {
+            "type": "field_number",
+            "name": "PNum",
+            "value": 1,
+            "precision": 1
+          },
+          {
+            "type": "field_number",
+            "name": "CNum",
+            "value": -1,
+            "min": -1,
+            "max": 3,
+            "precision": 1
+          },
+          {
+            "type": "field_number",
+            "name": "ANum",
+            "value": 100
+          },
+          {
+            "type": "field_number",
+            "name": "SNum",
+            "value": 1
+          },
+          {
+            "type": "input_end_row",
+            "name": "input1",
+            "align": "CENTRE"
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": MColors.blue
+      },
+      {
+        "type": "rspline",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "Reset Spline %1 %2 %3 Column %4 %5",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "Type",
+            "options": [
+              [
+                "X",
+                "X"
+              ],
+              [
+                "Y",
+                "Y"
+              ],
+              [
+                "Z",
+                "Z"
+              ],
+              [
+                "Rotation X",
+                "RotationX"
+              ],
+              [
+                "Rotation Y",
+                "RotationY"
+              ],
+              [
+                "Rotation Z",
+                "RotationZ"
+              ],
+              [
+                "Size",
+                "Size"
+              ],
+              [
+                "Skew",
+                "Skew"
+              ],
+              [
+                "Stealth",
+                "Stealth"
+              ]
+            ]
+          },
+          {
+            "type": "field_dropdown",
+            "name": "Player",
+            "options": [
+              [
+                "Player 1",
+                "P1"
+              ],
+              [
+                "Player 2",
+                "P2"
+              ]
+            ]
+          },
+          {
+            "type": "input_end_row",
+            "name": "input0"
+          },
+          {
+            "type": "field_number",
+            "name": "CNum",
+            "value": -1,
+            "min": -1,
+            "max": 3,
+            "precision": 1
+          },
+          {
+            "type": "input_end_row",
+            "name": "input1"
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": MColors.blue
+      },
+      {
+        "type": "for",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "For %1 = %2 Do %3 %4",
+        "args0": [
+          {
+            "type": "field_input",
+            "name": "val",
+            "text": "Thing"
+          },
+          {
+            "type": "input_value",
+            "name": "input0"
+          },
+          {
+            "type": "input_end_row",
+            "name": "label0"
+          },
+          {
+            "type": "input_statement",
+            "name": "input1"
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": MColors.yellow
       }
+                          
     ]);

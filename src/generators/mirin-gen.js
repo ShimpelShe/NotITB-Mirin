@@ -201,6 +201,7 @@ mirinGenerator.forBlock['while'] = function(block, generator) {
   const code = 'while (' + value_input0 + ') do\n' + statement_input1 + '\nend';
   return code;
 };
+
 mirinGenerator.forBlock['func'] = function(block, generator) {
   const text_name = block.getFieldValue('name');
 
@@ -209,5 +210,39 @@ mirinGenerator.forBlock['func'] = function(block, generator) {
   const statement_input2 = generator.statementToCode(block, 'input2');
 
   const code = 'func {' + value_input1 + ', function(' + text_name + ')\n' + statement_input2 + '\nend}';
+  return code;
+};
+
+mirinGenerator.forBlock['spline'] = function(block, generator) {
+  const dropdown_type = block.getFieldValue('Type');
+  const dropdown_player = block.getFieldValue('Player');
+  const number_onum = block.getFieldValue('ONum');
+
+  const number_pnum = block.getFieldValue('PNum');
+  const number_cnum = block.getFieldValue('CNum');
+  const number_anum = block.getFieldValue('ANum');
+  const number_snum = block.getFieldValue('SNum');
+
+  const code = dropdown_player + ':Set' + dropdown_type + 'Spline(' + number_pnum + ', ' + number_cnum + ', ' + number_anum + ', ' + number_onum + ', ' + number_snum + ')';
+  return code;
+};
+
+mirinGenerator.forBlock['rspline'] = function(block, generator) {
+  const dropdown_type = block.getFieldValue('Type');
+  const dropdown_player = block.getFieldValue('Player');
+
+  const number_cnum = block.getFieldValue('CNum');
+
+  const code = dropdown_player + ':Reset' + dropdown_type + 'Splines(' + number_cnum + ')';
+  return code;
+};
+
+mirinGenerator.forBlock['for'] = function(block, generator) {
+  const text_val = block.getFieldValue('val');
+  const value_input0 = generator.valueToCode(block, 'input0', Order.ATOMIC);
+
+  const statement_input1 = generator.statementToCode(block, 'input1');
+
+  const code = 'for ' + text_val + ' = ' + value_input0 + ' do\n' + statement_input1 + '\nend';
   return code;
 }

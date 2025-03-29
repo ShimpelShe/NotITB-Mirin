@@ -79,6 +79,10 @@ export const toolbox = {
         },
         {
           kind: 'block',
+          type: 'for'
+        },
+        {
+          kind: 'block',
           type: 'func'
         },
         {
@@ -100,7 +104,6 @@ export const toolbox = {
       name: 'Mod Stuff',
       colour: MColors.blue,
       contents: [
-        
         {
           kind: 'block',
           type: 'beat',
@@ -116,6 +119,14 @@ export const toolbox = {
         {
           kind: 'block',
           type: 'mod',
+        },
+        {
+          kind: 'block',
+          type: 'spline',
+        },
+        {
+          kind: 'block',
+          type: 'rspline',
         },
         {
           kind: 'block',
