@@ -263,13 +263,16 @@ mirinGenerator.forBlock['onplayers'] = function(block, generator) {
       block.removeInput('input'+i, true);
     }
   };
+  
   for (let i = 1; i <= number_pnum; i++) {
+    let input_val = 'input' + i;
     if (i == number_pnum) {
-      var onplayerz = onplayerz + block.getFieldValue('input'+i) + '';
+      var onplayerz = onplayerz + generator.valueToCode(block, 'input8', Order.ATOMIC) + '';
     } else {
-      var onplayerz = onplayerz + block.getFieldValue('input'+i) + ', ';
+      var onplayerz = onplayerz + generator.valueToCode(block, input_val, Order.ATOMIC) + ', ';
     }
   }
-  const code = 'plr={'+onplayerz+'}';
-  return code;
+
+  const code = 'plr={' + onplayerz + '}';
+  return [code, Order.ATOMIC];
 }

@@ -816,7 +816,7 @@ const onplayers = {
       this.appendValueInput('input'+i);
     };
     this.setInputsInline(true);
-    this.setOutput(true, null);
+    this.setOutput(true);
     this.setTooltip('');
     this.setHelpUrl('');
     this.setColour(MColors.blue);
