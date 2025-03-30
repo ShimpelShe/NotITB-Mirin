@@ -183,10 +183,6 @@ export const toolbox = {
           kind: 'block',
           type: 'number'
         },
-        {
-          kind: 'block',
-          type: 'lists_create_with'
-        },
       ]
     }
   ]
