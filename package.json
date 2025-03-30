@@ -27,6 +27,6 @@
     "@blockly/plugin-scroll-options": "^6.0.12",
     "@blockly/workspace-backpack": "^6.0.12",
     "@blockly/zoom-to-fit": "^6.0.12",
-    "blockly": "^11.0.0"
+    "blockly": "^11.2.2"
   }
 }

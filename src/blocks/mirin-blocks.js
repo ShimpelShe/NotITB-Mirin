@@ -781,6 +781,40 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
         "previousStatement": null,
         "nextStatement": null,
         "colour": MColors.yellow
-      }
-                          
+      },
+      {
+        "type": "localvar",
+        "tooltip": "",
+        "helpUrl": "",
+        "message0": "Local Variable %1 %2",
+        "args0": [
+          {
+            "type": "field_input",
+            "name": "varname",
+            "text": "Variable"
+          },
+          {
+            "type": "input_value",
+            "name": "input0"
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": MColors.purple
+      },
     ]);
+
+// We frankensteining now
+
+const onplayers = {
+  init: function() {
+    var i = 0
+    this.appendValueInput('input0')
+      .appendField('On players');
+    this.setOutput(true, null);
+    this.setTooltip('');
+    this.setHelpUrl('');
+    this.setColour(MColors.blue);
+  },
+}
+Blockly.common.defineBlocks({onplayers: onplayers});

@@ -130,6 +130,10 @@ export const toolbox = {
         },
         {
           kind: 'block',
+          type: 'onplayers'
+        },
+        {
+          kind: 'block',
           type: 'exclude',
         },
         {
@@ -147,7 +151,11 @@ export const toolbox = {
               }
             }
           }
-        }
+        },
+        {
+          kind: 'block',
+          type: 'localvar',
+        },
       ]
     },
     {
@@ -174,6 +182,10 @@ export const toolbox = {
         {
           kind: 'block',
           type: 'number'
+        },
+        {
+          kind: 'block',
+          type: 'lists_create_with'
         },
       ]
     }

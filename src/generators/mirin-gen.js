@@ -245,4 +245,53 @@ mirinGenerator.forBlock['for'] = function(block, generator) {
 
   const code = 'for ' + text_val + ' = ' + value_input0 + ' do\n' + statement_input1 + '\nend';
   return code;
-}
+};
+
+mirinGenerator.forBlock['localvar'] = function(block, generator) {
+  const text_varname = block.getFieldValue('varname');
+  const value_input0 = generator.valueToCode(block, 'input0', Order.ATOMIC);
+
+  const code = 'local ' + text_varname + ' = ' + value_input0;
+  return code;
+};
+
+mirinGenerator.forBlock['AddPlayers'] = function(block, generator) {
+  let code = 'plr={';
+  let numFields = block.numFields_; // Get the number of fields.
+
+  for (let i = 0; i < numFields; i++) {
+    let fieldName = 'plr' + i;
+    let fieldValue = block.getFieldValue(fieldName);
+
+    if (i > 0) {
+      code += ','; // Add a comma between numbers.
+    }
+    code += fieldValue;
+  }
+
+  code += '}';
+  return code; // Return the code string.  No order needed in this generator.
+};
+
+mirinGenerator.forBlock['lists_create_with'] = function(block, generator) {
+  const values = [];
+  for (let i = 0; i < block.itemCount_; i++) {
+    const valueCode = generator.valueToCode(block, 'ADD' + i,
+        Order.ATOMIC);
+    if (valueCode) {
+      values.push(valueCode);
+    }
+  }
+  const valueString = values.join(',\n');
+  const indentedValueString =
+      generator.prefixLines(valueString, generator.INDENT);
+  const codeString = '[\n' + indentedValueString + '\n]';
+  return [codeString, Order.ATOMIC];
+};
+
+mirinGenerator.forBlock['onplayers'] = function(block, generator) {
+  const value_input0 = generator.valueToCode(block, 'input0', Order.ATOMIC);
+  
+  const code = 'plr={' + value_input0 + '}';
+  return [code, Order.ATOMIC];
+};
