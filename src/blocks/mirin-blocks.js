@@ -424,7 +424,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
           }
         ],
         "output": null,
-        "colour":MColors.orange,
+        "colour": MColors.orange,
         "inputsInline": true
       },
       {
@@ -808,13 +808,32 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
 
 const onplayers = {
   init: function() {
-    var i = 0
-    this.appendValueInput('input0')
-      .appendField('On players');
+    this.appendEndRowInput('input0')
+      .appendField(new Blockly.FieldNumber(8, 1, 8, 1), 'PNum')
+      .appendField('Players');
+    let number_pnum = this.getFieldValue('PNum');
+    for (let i = 1; i <= number_pnum; i++) {
+      this.appendValueInput('input'+i);
+    };
+    this.setInputsInline(true);
     this.setOutput(true, null);
     this.setTooltip('');
     this.setHelpUrl('');
     this.setColour(MColors.blue);
   },
-}
+  onchange: function() {
+    let number_pnum = this.getFieldValue('PNum');
+    for (let i = 1; i <= number_pnum; i++) {
+      if (this.getInput('input'+i) != null) {
+      } else {
+        this.appendValueInput('input'+i);
+      }
+    };
+    for (let i = 7; i >= number_pnum; i--) {
+      if (this.getInputWithBlock('input'+i) == null) {
+        this.removeInput('input'+i, true);
+      }
+    };
+  }
+};
 Blockly.common.defineBlocks({onplayers: onplayers});
